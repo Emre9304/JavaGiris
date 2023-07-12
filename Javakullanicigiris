@@ -1,0 +1,45 @@
+package giris;
+import java.sql.SQLOutput;
+import java.util.Scanner;
+public class class3 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String kullaniciAdi, Sifre;
+        System.out.println("Kullanıcı adı oluşturunuz: ");
+        kullaniciAdi = input.next();
+        System.out.println("Şifre oluşturunuz: ");
+        Sifre = input.next();
+        System.out.println("Başarıyla kayıt oldunuz.");
+        System.out.println("Kullanıcı adınızı giriniz: ");
+        String giriskullaniciadi = input.next();
+        System.out.println("Şifrenizi giriniz: ");
+        String girissifre = input.next();
+        if (girissifre.equals(Sifre) && giriskullaniciadi.equals(kullaniciAdi)) {
+            System.out.println("Başarıyla giriş yaptınız.");
+
+
+
+        }else{
+            if ((!girissifre.equals(Sifre))){
+                System.out.println("Şifreniz yanlış.");
+                System.out.println("Şifrenizi sıfırlamak istiyor musunuz ? \n 1-Evet \n 2-Hayır");
+                int sifirlama = input.nextInt();
+                if (sifirlama == 1){
+                    System.out.println("Yeni şifrenizi giriniz: ");
+                    String yenisifre = input.next();
+                    if (yenisifre.equals(Sifre)){
+                        System.out.println("Şifre oluşturulamadı, lütfen başka şifre giriniz");
+                    }else{
+                        System.out.println("Başarıyla şifrenizi değiştirdiniz.");
+                    }
+                }
+
+            }else
+                System.out.println("Kullanıcı adınız yanlış.");
+        }
+
+
+    }}
+
+
+
